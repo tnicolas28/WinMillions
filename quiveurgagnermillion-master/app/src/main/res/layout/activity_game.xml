@@ -3,92 +3,100 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@color/colorPrimaryDark"
+    android:orientation="vertical"
     tools:context=".Game">
 
     <Chronometer
         android:id="@+id/chrono"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:format="%s"
         android:gravity="center_horizontal"
         android:textColor="#FFF"
-        android:format="%s"
-        android:textSize="100sp"/>
+        android:textSize="100sp" />
+
     <TextView
+        android:id="@+id/q"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:id="@+id/q"
-        android:textSize="20sp"
         android:layout_margin="10dp"
+        android:background="@color/colorPrimary"
         android:padding="5dp"
         android:textColor="@color/colorWhitey"
-        android:background="@color/colorPrimary"/>
+        android:textSize="20sp" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
+
         <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_gravity="center"
             android:id="@+id/ans1"
-            android:layout_margin="10dp"
-            android:padding="5dp"
-            android:textColor="@color/colorWhitey"
-            android:background="@color/colorPrimary"/>
-        <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:background="@color/colorPrimary"
+            android:padding="5dp"
+            android:textColor="@color/colorWhitey" />
+
+        <Button
             android:id="@+id/ans2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:background="@color/colorPrimary"
             android:padding="5dp"
-            android:textColor="@color/colorWhitey"
-            android:background="@color/colorPrimary"/>
+            android:textColor="@color/colorWhitey" />
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
+
         <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_gravity="center"
             android:id="@+id/ans3"
-            android:layout_margin="10dp"
-            android:padding="5dp"
-            android:textColor="@color/colorWhitey"
-            android:background="@color/colorPrimary"/>
-        <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:layout_gravity="center"
-            android:id="@+id/ansTrue"
             android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:background="@color/colorPrimary"
             android:padding="5dp"
-            android:textColor="@color/colorWhitey"
-            android:background="@color/colorPrimary"/>
+            android:textColor="@color/colorWhitey" />
+
+        <Button
+            android:id="@+id/ansTrue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:background="@color/colorPrimary"
+            android:padding="5dp"
+            android:textColor="@color/colorWhitey" />
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
+
         <Button
+            android:id="@+id/back_to_menu_warning"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:id="@+id/back_to_menu_warning"
-            android:text="Back to menu"
-            android:textSize="20sp"
             android:layout_margin="100dp"
-            android:background="@color/colorPrimary"/>
+            android:background="@color/colorPrimary"
+            android:text="Back to menu"
+            android:textSize="20sp" />
     </LinearLayout>
 
 </LinearLayout>

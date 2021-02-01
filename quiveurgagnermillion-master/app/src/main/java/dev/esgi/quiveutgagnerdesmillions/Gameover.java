@@ -1,12 +1,12 @@
 package dev.esgi.quiveutgagnerdesmillions;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.analytics.FirebaseAnalytics;
 
@@ -27,9 +27,9 @@ public class Gameover extends AppCompatActivity {
         winText = findViewById(R.id.gameoverText);
         crash = findViewById(R.id.btn_crash);
 
-        crash.setOnClickListener(new View.OnClickListener(){
+        crash.setOnClickListener(new View.OnClickListener() {
 
-            public void onClick(View view){
+            public void onClick(View view) {
 
                 throw new RuntimeException("test");
 
@@ -37,19 +37,22 @@ public class Gameover extends AppCompatActivity {
 
         });
 
-        text.setText("score : "+MainActivity.score);
-
+        text.setText("score : " + MainActivity.score);
         Boolean status = false;
         try {
-             status = getIntent().getExtras().getBoolean("win");
-        }catch (NullPointerException e){
-        }
-        if (status){
-            winText.setText("You WIN !");
-        }else{
-            winText.setText("GAME OVER");
+            status = getIntent().getExtras().getBoolean("win");
+        } catch (NullPointerException e) {
         }
 
+        if (status) {
+            winText.setText("You WIN !");
+        } else {
+            winText.setText("YOU LOSE !");
+        }
+
+        Bundle gameStatus = new Bundle();
+        gameStatus.putBoolean(FirebaseAnalytics.Param.SUCCESS, status);
+        firebase.logEvent(FirebaseAnalytics.Event.LEVEL_END, gameStatus);
         back_to_menu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -12,6 +12,7 @@
         <activity android:name=".Gameover"></activity>
         <activity android:name=".Game" />
         <activity android:name=".About" />
+        <activity android:name=".Store" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

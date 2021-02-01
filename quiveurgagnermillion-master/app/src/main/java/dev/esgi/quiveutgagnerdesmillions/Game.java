@@ -1,9 +1,5 @@
 package dev.esgi.quiveutgagnerdesmillions;
 
-import androidx.annotation.RequiresApi;
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
@@ -15,17 +11,21 @@ import android.widget.Button;
 import android.widget.Chronometer;
 import android.widget.TextView;
 
+import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+
 import java.util.Random;
 
 public class Game extends AppCompatActivity {
     public final static int TIMER_TIME = 21;
     public final static int ANSWERS_TOTAL = 4;
+    //
+    int i;
     private int index = TIMER_TIME;
     private Chronometer timer;
     private TextView question;
     private Button back_to, answer1, answer2, answer3, answerTrue;
-    //
-    int i;
 
     @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
@@ -43,7 +43,7 @@ public class Game extends AppCompatActivity {
         question.setText(MainActivity.questions.get(i).getAsk());
 
         int give = r.nextInt(ANSWERS_TOTAL);
-        switch(give) {
+        switch (give) {
             case 0:
                 // the answer is top left
                 answerTrue = findViewById(R.id.ans1);
@@ -109,19 +109,18 @@ public class Game extends AppCompatActivity {
         */
 
 
-
         timer.start();
         timer.setCountDown(true);
         timer.setBase(SystemClock.elapsedRealtime() + (TIMER_TIME * 1000));
         timer.setOnChronometerTickListener(new Chronometer.OnChronometerTickListener() {
             @Override
             public void onChronometerTick(Chronometer chronometer) {
-                if(index !=0){
-                    index -=1;
-                    if(index <= 5){
+                if (index != 0) {
+                    index -= 1;
+                    if (index <= 5) {
                         timer.setTextColor(Color.RED);
                     }
-                }else {
+                } else {
                     timer.stop();
                     Intent i = new Intent(Game.this, Gameover.class);
                     startActivity(i);
@@ -187,15 +186,15 @@ public class Game extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 answerTrue.setTextColor(Color.GREEN);
-                if(!MainActivity.questions.isEmpty()) {
+                if (!MainActivity.questions.isEmpty()) {
                     //retirer la question en cours
                     MainActivity.questions.remove(i);
                     if (MainActivity.questions.isEmpty()) {
                         Intent j = new Intent(Game.this, Gameover.class);
-                        j.putExtra("win",true);
+                        j.putExtra("win", true);
                         startActivity(j);
                         finish();
-                    }else{
+                    } else {
                         MainActivity.score = MainActivity.score + 10;
                         Intent k = new Intent(Game.this, Game.class);
                         startActivity(k);

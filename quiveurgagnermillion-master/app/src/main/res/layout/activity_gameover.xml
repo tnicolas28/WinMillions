@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -9,54 +8,55 @@
     tools:context=".Gameover">
 
     <TextView
+        android:id="@+id/scoreText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="@color/colorAccent"
-        android:id="@+id/scoreText"
-        android:text=""
-        android:textSize="20sp"
         android:layout_margin="50dp"
         android:gravity="center"
-        />
+        android:text=""
+        android:textColor="@color/colorAccent"
+        android:textSize="20sp" />
 
     <TextView
+        android:id="@+id/gameoverText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:textSize="50sp"
         android:layout_marginBottom="50dp"
-        android:textColor="@color/colorAccent"
-        android:id="@+id/gameoverText"
-        android:text=""
         android:gravity="center"
-        />
+        android:text=""
+        android:textColor="@color/colorAccent"
+        android:textSize="50sp" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
+
         <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_gravity="center"
-            android:textSize="20sp"
-            android:text="Back to menu"
             android:id="@+id/btn_back_to_menu"
-            android:layout_margin="10dp"
-            android:padding="5dp"
-            android:background="@color/colorPrimary"/>
-        <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:layout_gravity="center"
-            android:textSize="20sp"
-            android:text="Save score"
-            android:id="@+id/btn_save_score"
             android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:background="@color/colorPrimary"
             android:padding="5dp"
-            android:background="@color/colorPrimary"/>
+            android:text="Back to menu"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/btn_save_score"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:background="@color/colorPrimary"
+            android:padding="5dp"
+            android:text="Save score"
+            android:textSize="20sp" />
+
         <Button
             android:id="@+id/btn_crash"
             android:layout_width="match_parent"
